@@ -1,0 +1,31 @@
+﻿<Window x:Class="TreeViewTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreeViewTest"
+        mc:Ignorable="d"
+        Title="Window1" Height="657.303" Width="660" Background="Transparent" WindowStyle="None"  AllowsTransparency="True"
+         MouseLeftButtonDown="Window_MouseLeftButtonDown" MouseMove="Window_MouseMove" 
+        WindowStartupLocation="CenterScreen">
+    <!--MouseLeftButtonDown="Window_MouseLeftButtonDown" 생략됨. 에러시 다시 넣으라-->
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid AllowDrop="True" PreviewDragEnter="FileShowTextBox_PreviewDragEnter" PreviewDragOver="FileShowTextBox_PreviewDragEnter" 
+          PreviewDrop="FileShowTextBox_PreviewDrop">
+            <Canvas x:Name="Second" Background="Transparent" IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,0,0,-67">
+                <Image x:Name="골격2" Canvas.ZIndex="3"  Source="Images\2골격.png" Height="588" Width="643" Stretch="Fill" Canvas.Top="67" MouseDown="null_event"/>
+                <Image x:Name="손잡이2" Canvas.ZIndex="1"  Source="Images\2손잡이.png" Canvas.Left="117" MouseLeftButtonDown="Window_MouseDown"/>
+            </Canvas>
+            <WrapPanel Name="wrapPanel1" HorizontalAlignment="Left" Height="491" Margin="37,99,0,0" VerticalAlignment="Top" Width="568" MouseDown="null_event"/>
+            <Image x:Name="close" Canvas.ZIndex="4" Source="Images\600px-Red_x.svg.png" Canvas.Left="224" Canvas.Top="50" 
+                   MouseLeftButtonDown="Close" Margin="605,70,20,558"/>
+            <Image x:Name="ChangePassword" Canvas.ZIndex="4" Source="Images\noun_250130_cc.png" Canvas.Left="224" 
+                   Canvas.Top="50" Margin="565,70,60,558" MouseLeftButtonDown="ChangePassword_MouseLeftButtonDown"/>
+            <Image x:Name="BackUp_Password" Canvas.ZIndex="4" Source="Images\noun_368368_cc.png" Canvas.Left="224" 
+                   Canvas.Top="50" Margin="530,70,95,558" MouseLeftButtonDown="BackUp_Password_MouseLeftButtonDown"/>
+            <Image x:Name="Back" Canvas.ZIndex="4" Source="Images\back.png" Margin="10,590,620,37" MouseLeftButtonDown="Back_MouseLeftButtonDown"/>
+            <Image x:Name="Next" Canvas.ZIndex="4" Source="Images\next.png" Margin="595,590,35,37" MouseLeftButtonDown="Next_MouseLeftButtonDown"/>
+            <Rectangle x:Name="text1" AllowDrop="True"  Width="0" Height="0" Margin="0,0,650,647"/>
+        </Grid>
+    </Grid>
+</Window>

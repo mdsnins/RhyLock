@@ -1,0 +1,31 @@
+﻿<Window x:Class="TreeViewTest.Tutorial"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreeViewTest"
+        mc:Ignorable="d"
+        Title="Tutorial" Height="500" Width="500" Background="Transparent" WindowStyle="None" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DoubleAnimation x:Key="MoveAnimation" Storyboard.TargetName="Panels" Storyboard.TargetProperty="(Canvas.Left)" SpeedRatio="2"/>
+    </Window.Resources>
+    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+        <Image x:Name="tv" Panel.ZIndex="1" Source="Images\튜토리얼_0000_모서리가-둥근-직사각형-4.png"/>
+        <Image x:Name="BackGround" Panel.ZIndex="0" Source="Images\튜토리얼_0001_모서리가-둥근-직사각형-2.png" Margin="60,97,64,27"/>
+        <Image x:Name="exit" Canvas.ZIndex="4" Source="Images\600px-Red_x.svg.png" Margin="427,72,43,403" MouseLeftButtonDown="exit_MouseLeftButtonDown"/>
+        <Image x:Name="Back" Canvas.ZIndex="4" Source="Images\back.png" Margin="20,255,430,195" MouseLeftButtonDown ="Back_MouseLeftButtonDown"/>
+        <Image x:Name="Next" Canvas.ZIndex="4" Source="Images\next.png" Margin="427,255,23,195" MouseLeftButtonDown="Next_MouseLeftButtonDown"/>
+        <Canvas Margin="60,97,64,27" ClipToBounds="True">
+            <StackPanel x:Name="Panels" Canvas.Left="0" Orientation="Horizontal">
+                <Image Source="Images\양식_사진1_0000_환영합니다! 오른쪽으로 넘겨 사용법을 알아보세요..jpg" Height="375" Width="375"/>
+                <MediaElement x:Name="a" LoadedBehavior="Play" MediaEnded="a1" Source="bin\tu1.gif" Height="375" Width="375"/>
+                <MediaElement x:Name="b" LoadedBehavior="Play" MediaEnded="b1" Source="bin\tu2.gif" Height="375" Width="375"/>
+                <MediaElement x:Name="c" LoadedBehavior="Play" MediaEnded="c1" Source="bin\tu3.gif" Height="375" Width="375"/>
+                <MediaElement x:Name="d" LoadedBehavior="Play" MediaEnded="d1" Source="bin\tu4.gif" Height="375" Width="375"/>
+                <Image Source="Images\tu5.png" Height="376" Width="376"/>
+                <Image Source="Images\tu6.png" Height="376" Width="376"/>
+            </StackPanel>
+        </Canvas>
+    </Grid>
+</Window>
